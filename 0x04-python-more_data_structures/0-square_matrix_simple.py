@@ -11,7 +11,7 @@ Return:
 
 
 def square_matrix_simple(matrix=[]):
-    square_list = []
+    new_list = []
     for items in matrix:
-        square_list.append(list(map(lambda X: X ** 2, items)))
-        return square_list
+        new_list.append(list(map(lambda X: X ** 2, items)))
+        return new_list
