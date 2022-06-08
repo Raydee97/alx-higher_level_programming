@@ -2,4 +2,7 @@
 
 
 def square_matrix_simple(matrix=[]):
-    list(map(lambda matrix: list(map(lambda x: x**2, range(matrix))), matrix))
+    square_list = []
+    for items in matrix:
+        square_list(list(map(lambda X: X ** 2, items)))
+        print(square_list)
