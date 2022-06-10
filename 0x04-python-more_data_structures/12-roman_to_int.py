@@ -4,13 +4,26 @@ def roman_to_int(roman_string):
     converts a Roman numeral to an integer.
 
     """
-    if not roman_string or type(roman_string) != str:
+    if roman_string is None or type(roman_string) is not str:
         return 0
-    total = 0
-    digits = {'M': 1000, 'D': 500, 'C': 100, 'L': 50, 'X': 10, 'V': 5, 'I': 1}
-    for roman in reversed(roman_string):
-        arabic = digits[roman]
-        total += arabic if total < arabic * 5 else -arabic
-    return total
+
+    roman_nums = {
+        'I': 1,
+        'V': 5,
+        'X': 10,
+        'L': 50,
+        'C': 100,
+        'D': 500,
+        'M': 1000
+    }
+    numerals = list(map(lambda x: roman_nums.get(x), roman_string))
+    result = 0
+    for i, value in enumerate(numerals):
+        if i <= len(numerals) - 2 and value < numerals[i + 1]:
+            result -= value
+        else:
+            result += value
+    return result
+
 
 
