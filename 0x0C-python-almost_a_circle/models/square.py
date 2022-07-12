@@ -1,4 +1,4 @@
-!/usr/bin/python3
+#!/usr/bin/python3
 '''Square class module - test located in tests/test_square/py'''
 from models.rectangle import Rectangle
 
